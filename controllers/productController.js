@@ -1,5 +1,5 @@
 // controllers/productController.js
-const Product = require("../models/Product"); // Importa el modelo de producto
+const Product = require("../models/product"); // Importa el modelo de producto
 
 // @desc    Obtener todos los productos
 // @route   GET /api/products
