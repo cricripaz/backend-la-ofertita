@@ -20,7 +20,7 @@ const getProducts = async (req, res) => {
 const createProduct = async (req, res) => {
     try {
         const product = await Product.create(req.body); // Crea un nuevo producto con los datos del cuerpo de la solicitud
-        res.status(201).json({ success: true, data: product }); // Responde con el producto creado y estado 201 (Created)
+        res.status(201).json({ message : "product created successfully"}); // Responde con el producto creado y estado 201 (Created)
     } catch (error) {
         // Manejar errores de validación de Mongoose o duplicados
         if (error.name === 'ValidationError') {
