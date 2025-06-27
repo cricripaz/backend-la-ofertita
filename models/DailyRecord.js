@@ -53,10 +53,6 @@ const dailyRecordSchema = new mongoose.Schema({
         default: 0,
         min: [0, "La venta del día no puede ser negativa"],
     },
-    createdAt: { // Fecha y hora de creación de este documento en la base de datos
-        type: Date,
-        default: Date.now,
-    },
 });
 
 module.exports = mongoose.model("DailyRecord", dailyRecordSchema);
