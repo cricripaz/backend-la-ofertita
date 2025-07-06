@@ -1,9 +1,7 @@
 // server.js
 const express = require("express");
 const dotenv = require("dotenv");
-const colors = require("colors"); // Para mensajes bonitos en la consola (opcional)
 const connectDB = require("./config/db");
-const errorHandler = require("./middleware/errorMiddleware"); // Importar el middleware de errores
 
 // Cargar variables de entorno
 dotenv.config({ path: "./.env" });
@@ -34,11 +32,10 @@ app.use("/api/dailyrecords", dailyRecordRoutes);
 // ¡Montar las nuevas rutas de pedidos!
 app.use("/api/orders", orderRoutes);
 
-// Middleware de manejo de errores (debe ir al final de todas las rutas)
-app.use(errorHandler);
+
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Servidor de la API de La OFERTITA ejecutándose en el puerto ${PORT}`.yellow.bold); // Mensaje más descriptivo
+    console.log(`Servidor de la API de La OFERTITA ejecutándose en el puerto ${PORT}`); // Mensaje más descriptivo
 });
